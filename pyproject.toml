@@ -1,0 +1,13 @@
+[project]
+name = "registration"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "diffdrr>=0.6.1",
+    "matplotlib>=3.11.1",
+    "torch>=2.13.0",
+    "torchvision>=0.28.0",
+    "tqdm>=4.70.0",
+]
