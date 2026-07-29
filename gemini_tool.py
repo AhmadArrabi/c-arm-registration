@@ -47,7 +47,7 @@ class InteractiveDRRAnnotator:
         self.device = drr_module.device
         self.B = B
         self.N = B * B
-        self.drr_batch_size = 2
+        self.drr_batch_size = 8
         
         # Grid settings
         self.grid_extent = 50.0  # Defines spread of the grid from the center
@@ -200,9 +200,9 @@ class InteractiveDRRAnnotator:
                     break
 
 def main():
-    sample_file = "./data/case-100012_BONE_H-N-UXT_3X3.nii.gz"
+    sample_file = "Y:/biplane_positioning/data/CTA/nifti/104006334-1.2.840.113696.376376.500.37870131.20170220102913/4_cta_carotid__075__b20f.nii.gz"
     csv_output_file = "pose_annotations.csv"
-    
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     print("Loading volume...")
@@ -218,7 +218,7 @@ def main():
         sample_file=sample_file,
         csv_path=csv_output_file,
         sdd=sdd,
-        B=2 
+        B=1
     )
     
     # Starts the blocking UI event loop
